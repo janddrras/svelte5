@@ -6,7 +6,7 @@
 	import Timer from '$lib/components/Timer.svelte'
 </script>
 
-<h1 class="text-2xl pb-14">Welcome to SvelteKit</h1>
+<h1 class="text-2xl pb-14">Page 1</h1>
 <div class="flex flex-col gap-2">
 	<Counter />
 	<hr class="m-14 border-t-slate-600" />

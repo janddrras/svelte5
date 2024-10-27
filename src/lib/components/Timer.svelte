@@ -18,10 +18,12 @@
 
 <div class="w-full flex items-center justify-center gap-2">
 	<h2>Timer</h2>
-	<label class="flex flex-col gap-2">
+	<div class="flex flex-col gap-2">
 		<span>elapsed time:</span>
-		<progress max={duration} value={elapsed}></progress>
-	</label>
+		<div class="progress w-48 h-4 bg-slate-400 rounded overflow-hidden">
+			<div class="progress-bar h-full bg-blue-500" style="width: {(elapsed / duration) * 100}%"></div>
+		</div>
+	</div>
 	<p class="px-4">{elapsed.toFixed(1)} s</p>
 	<label class="flex flex-col gap-2">
 		<span>duration:</span>
