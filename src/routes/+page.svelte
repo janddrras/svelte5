@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Counter from '$lib/components/Counter.svelte'
+	import Crud from '$lib/components/CRUD.svelte'
 	import FlightBooker from '$lib/components/FlightBooker.svelte'
 	import TempConverter from '$lib/components/TempConverter.svelte'
 	import Timer from '$lib/components/Timer.svelte'
@@ -14,4 +15,6 @@
 	<FlightBooker />
 	<hr class="m-14 border-t-slate-600" />
 	<Timer />
+	<hr class="m-14 border-t-slate-600" />
+	<Crud />
 </div>
