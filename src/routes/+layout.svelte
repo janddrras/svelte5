@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/stores'
 	import '../app.css'
 	let { children } = $props()
 </script>
@@ -15,9 +14,11 @@
 				<li>
 					<a href="/" class="text-slate-400 hover:text-slate-200">Home</a>
 				</li>
-				<li>
-					<a href="/2" class="text-slate-400 hover:text-slate-200">Page 2</a>
-				</li>
+				{#each { length: 3 } as _, i}
+					<li>
+						<a href="/{i + 1}" class="text-slate-400 hover:text-slate-200">Page {i + 1}</a>
+					</li>
+				{/each}
 			</ul>
 		</nav>
 	</div>
