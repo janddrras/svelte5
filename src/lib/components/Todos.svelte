@@ -36,12 +36,11 @@
 	})
 
 	function add(input: HTMLInputElement) {
-		const todo = {
+		const todo: Todo = {
 			id: window.crypto.randomUUID(),
 			done: false,
 			description: input.value
 		}
-
 		todos = [todo, ...todos]
 		input.value = ''
 	}
@@ -55,7 +54,7 @@
 	<input
 		class="p-2 text-slate-800 bg-slate-200 rounded w-full"
 		placeholder="what needs to be done?"
-		onkeydown={(event) => event.key === 'Enter' && add(event.target as HTMLInputElement)}
+		onkeydown={(event: KeyboardEvent) => event.key === 'Enter' && add(event.target as HTMLInputElement)}
 	/>
 
 	<div class="flex gap-8 w-full mt-8">
