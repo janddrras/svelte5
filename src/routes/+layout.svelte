@@ -3,6 +3,12 @@
 	let { children } = $props()
 </script>
 
+<svelte:head>
+	<title>SvelteKit Playground</title>
+	<meta name="description" content="SvelteKit Playground" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</svelte:head>
+
 <main class="bg-gray-800 text-slate-300 w-full h-screen text-center p-10">
 	<div class="flex flex-col h-full">
 		<div class="child flex-1">
@@ -14,7 +20,7 @@
 				<li>
 					<a href="/" class="text-slate-400 hover:text-slate-200">Home</a>
 				</li>
-				{#each { length: 3 } as _, i}
+				{#each { length: 4 } as _, i}
 					<li>
 						<a href="/{i + 1}" class="text-slate-400 hover:text-slate-200">Page {i + 1}</a>
 					</li>
