@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores'
+	import Cursor from '$lib/components/Cursor.svelte'
 	import TextSelect from '$lib/components/TextSelect.svelte'
 
 	const pageName = $page.url.toString().split('/').pop()
@@ -9,4 +10,5 @@
 <div class="flex flex-col gap-2">
 	<TextSelect />
 	<hr class="m-14 border-t-slate-600" />
+	<Cursor />
 </div>
