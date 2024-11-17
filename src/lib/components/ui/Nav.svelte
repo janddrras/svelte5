@@ -8,7 +8,6 @@
 	afterNavigate(() => {
 		slug = $page.url.toString().split('/').pop()
 		currentPage = slug === '' ? 0 : parseInt(slug!)
-		console.log('currentPage', currentPage)
 	})
 </script>
 
