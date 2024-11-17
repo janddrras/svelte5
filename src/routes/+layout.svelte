@@ -1,5 +1,7 @@
 <script lang="ts">
+	import Nav from '$lib/components/ui/Nav.svelte'
 	import '../app.css'
+
 	let { children } = $props()
 </script>
 
@@ -15,17 +17,6 @@
 			{@render children()}
 		</div>
 
-		<nav class="pt-16 h-2">
-			<ul class="flex justify-center gap-4">
-				<li>
-					<a href="/" class="text-slate-400 hover:text-slate-200">Home</a>
-				</li>
-				{#each { length: 4 } as _, i}
-					<li>
-						<a href="/{i + 1}" class="text-slate-400 hover:text-slate-200">Page {i + 1}</a>
-					</li>
-				{/each}
-			</ul>
-		</nav>
+		<Nav />
 	</div>
 </main>
