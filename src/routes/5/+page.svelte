@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores'
 	import Transitions from '$lib/components/experiments/page5/Transitions.svelte'
+	import Typewriter from '$lib/components/experiments/page5/Typewriter.svelte'
 
 	const pageName = $page.url.toString().split('/').pop()
 </script>
@@ -9,4 +10,5 @@
 <div class="flex flex-col gap-2">
 	<Transitions />
 	<hr class="m-14 border-t-slate-600" />
+	<Typewriter />
 </div>

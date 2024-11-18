@@ -23,7 +23,7 @@
 	}
 </script>
 
-<div class="relative w-full h-80">
+<div class="relative w-full h-[500px]">
 	<div class="bg-slate-700 p-4 rounded w-48 mx-auto mb-8">
 		<label>
 			<h3>stiffness ({coords.stiffness})</h3>
