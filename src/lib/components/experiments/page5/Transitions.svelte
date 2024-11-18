@@ -35,7 +35,7 @@
 	}
 </script>
 
-<div class="h-[400px]">
+<div class="h-[300px]">
 	<button class="btn-primary mx-auto" onclick={() => (visible = !visible)}>Button</button>
 	<div class="w-full h-full grid">
 		{#if visible}

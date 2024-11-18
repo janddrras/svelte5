@@ -25,8 +25,10 @@
 
 <div class="w">
 	<input id="write" type="checkbox" bind:checked={visible} />
-	<label class="ml-2" for="write"> {!visible ? 'Write' : 'Erase'} </label>
-	{#if visible}
-		<p class="pt-8 text-xl" transition:typewriter={{ speed: 1 }}>The quick brown fox jumps over the lazy dog</p>
-	{/if}
+	<label class="ml-2" for="write"> {visible ? 'Write' : 'Erase'} </label>
+	<div class="h-24">
+		{#if visible}
+			<p class="pt-8 text-xl" transition:typewriter={{ speed: 1 }}>The quick brown fox jumps over the lazy dog</p>
+		{/if}
+	</div>
 </div>

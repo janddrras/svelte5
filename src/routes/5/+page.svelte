@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores'
+	import Modal from '$lib/components/experiments/page5/Modal.svelte'
+	import Presser from '$lib/components/experiments/page5/Presser.svelte'
 	import Transitions from '$lib/components/experiments/page5/Transitions.svelte'
 	import Typewriter from '$lib/components/experiments/page5/Typewriter.svelte'
 
@@ -11,4 +13,8 @@
 	<Transitions />
 	<hr class="m-14 border-t-slate-600" />
 	<Typewriter />
+	<hr class="m-14 border-t-slate-600" />
+	<Modal />
+	<hr class="m-14 border-t-slate-600" />
+	<Presser />
 </div>
