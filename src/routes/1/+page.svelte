@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Counter from '$lib/components/Counter.svelte'
-	import Crud from '$lib/components/CRUD.svelte'
-	import FlightBooker from '$lib/components/FlightBooker.svelte'
-	import TempConverter from '$lib/components/TempConverter.svelte'
-	import Timer from '$lib/components/Timer.svelte'
+	import Counter from '$lib/components/experiments/page1/Counter.svelte'
+	import Crud from '$lib/components/experiments/page1/CRUD.svelte'
+	import FlightBooker from '$lib/components/experiments/page1/FlightBooker.svelte'
+	import TempConverter from '$lib/components/experiments/page1/TempConverter.svelte'
+	import Timer from '$lib/components/experiments/page1/Timer.svelte'
 	import { page } from '$app/stores'
 
 	const pageName = $page.url.toString().split('/').pop()

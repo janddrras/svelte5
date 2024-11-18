@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores'
-	import Cursor from '$lib/components/Cursor.svelte'
-	import TextSelect from '$lib/components/TextSelect.svelte'
+	import Cursor from '$lib/components/experiments/page4/Cursor.svelte'
+	import TextSelect from '$lib/components/experiments/page4/TextSelect.svelte'
 
 	const pageName = $page.url.toString().split('/').pop()
 </script>

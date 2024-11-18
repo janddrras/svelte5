@@ -12,7 +12,7 @@
 </svelte:head>
 
 <main class="bg-gray-800 text-slate-300 w-full h-screen text-center p-10">
-	<div class="flex flex-col h-full">
+	<div class="flex flex-col h-full container lg:px-16">
 		<div class="child flex-1">
 			{@render children()}
 		</div>

@@ -1,6 +1,6 @@
 <script>
-	import Todos from '$lib/components/Todos.svelte'
-	import VideoPlayer from '$lib/components/VideoPlayer.svelte'
+	import Todos from '$lib/components/experiments/page3/Todos.svelte'
+	import VideoPlayer from '$lib/components/experiments/page3/VideoPlayer.svelte'
 	import { page } from '$app/stores'
 
 	const pageName = $page.url.toString().split('/').pop()
