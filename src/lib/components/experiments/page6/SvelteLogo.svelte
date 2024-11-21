@@ -52,6 +52,7 @@
 	div {
 		position: relative;
 		width: 50%;
+		height: 400px;
 		margin: 0 auto;
 	}
 	svg {
@@ -71,10 +72,10 @@
 	}
 
 	.centered {
-		font-size: 6rem;
+		font-size: 4rem;
 		text-align: center;
 		position: absolute;
-		left: 8%;
+		left: 26%;
 		top: 35%;
 		font-family: 'Overpass';
 		letter-spacing: 0.12em;

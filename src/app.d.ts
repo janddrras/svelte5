@@ -14,6 +14,9 @@ declare module 'svelte/elements' {
 	export interface HTMLAttributes {
 		onoutclick?: (event: CustomEvent) => void
 		onlongpress?: (event: CustomEvent) => void
+		onpanstart?: (event: CustomEvent) => void
+		onpanmove?: (event: CustomEvent) => void
+		onpanend?: (event: CustomEvent) => void
 	}
 }
 
