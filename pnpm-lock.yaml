@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      iconify-icon:
+        specifier: ^2.2.0
+        version: 2.2.0
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.3.1
@@ -264,6 +268,9 @@ packages:
   '@humanwhocodes/retry@0.4.1':
     resolution: {integrity: sha512-c7hNEllBlenFTHBky65mhq8WD2kbN9Q6gk0bTk8lSBvc554jpXSkST1iePudpt7+A/AQvuHs9EMqjHDXMY1lrA==}
     engines: {node: '>=18.18'}
+
+  '@iconify/types@2.0.0':
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -855,6 +862,9 @@ packages:
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
+
+  iconify-icon@2.2.0:
+    resolution: {integrity: sha512-PDYyUWgsI8tp5uTwRAfwfrmjkC9WEzWbUFuByAiZAIuCFigho7u+ApIYJ9fKoZyyp8SBCpnq/dVHewNv4or6bg==}
 
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
@@ -1552,6 +1562,8 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.1': {}
 
+  '@iconify/types@2.0.0': {}
+
   '@isaacs/cliui@8.0.2':
     dependencies:
       string-width: 5.1.2
@@ -2168,6 +2180,10 @@ snapshots:
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
+
+  iconify-icon@2.2.0:
+    dependencies:
+      '@iconify/types': 2.0.0
 
   ignore@5.3.2: {}
 

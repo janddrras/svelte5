@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores'
-	import PanBox from '$lib/components/experiments/page6/page7/PanBox.svelte'
+	import PanBox from '$lib/components/experiments/page7/PanBox.svelte'
 
 	const pageName = $page.url.toString().split('/').pop()
 </script>

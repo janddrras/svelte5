@@ -13,7 +13,7 @@
 
 <nav class="pt-16 h-2">
 	<ul class="flex justify-center gap-4">
-		{#each { length: 8 } as _, i}
+		{#each { length: 9 } as _, i}
 			{@const pageName = i === 0 ? 'Home' : `Page ${i}`}
 			{#if i === currentPage}
 				<li>
