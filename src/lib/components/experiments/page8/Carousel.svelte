@@ -2,33 +2,23 @@
 	import 'iconify-icon'
 	import { carouselList } from './CarouselList'
 	import type { CarouselItem } from './CarouselList'
-	import { crossfade, fade, fly } from 'svelte/transition'
+	import { fade, fly, scale } from 'svelte/transition'
 	import { flip } from 'svelte/animate'
-	import { linear } from 'svelte/easing'
+	import { Timer } from '../../../timer.svelte'
 
 	let visible = $state(0)
 	let play = $state(false)
 
-	const [send, receive] = crossfade({
-		fallback(node, params) {
-			const style = getComputedStyle(node)
-			const transform = style.transform === 'none' ? '' : style.transform
+	let timer = new Timer(3000)
 
-			return {
-				duration: 600,
-				css: (t) => `
-					transform: ${transform} scale(${t});
-					opacity: ${t}
-				`
-			}
-		}
-	})
+	const sortThumbs = (arr: CarouselItem[], idx: number): CarouselItem[] => [...arr.slice(idx), ...arr.slice(0, idx)]
 
-	let thumbList: CarouselItem[] = $derived(carouselList.filter((item) => item.id !== visible + 1))
+	let thumbList: CarouselItem[] = $derived(sortThumbs(carouselList, visible).filter((i) => i.id !== visible + 1))
 
 	const changePic = (mode: 'next' | 'prev' | 'thumb', id?: number) => {
 		if (mode === 'next') {
 			visible = visible === carouselList.length - 1 ? 0 : visible + 1
+			thumbList
 		} else if (mode === 'prev') {
 			visible = visible === 0 ? carouselList.length - 1 : visible - 1
 		} else {
@@ -36,18 +26,21 @@
 		}
 	}
 
-	// $inspect(list, visible)
-
 	$effect(() => {
 		if (!play) return
-		const interval = setInterval(() => {
+		let interval = setInterval(() => {
 			changePic('next')
-		}, 4000)
+			timer.start()
+		}, 3000)
+		timer.stop()
 		return () => clearInterval(interval)
 	})
 </script>
 
 <section id="carousel">
+	{#if play}
+		<div class="duration" style:width={`${100 - timer.time}%`}></div>
+	{/if}
 	<div class="list">
 		{#key carouselList[visible].id}
 			<article class="frame">
@@ -75,9 +68,9 @@
 			<div
 				class="thumbnail"
 				onclick={() => changePic('thumb', thumb.id)}
-				in:receive={{ key: thumb.id }}
-				out:send={{ key: thumb.id }}
-				animate:flip
+				in:fade={{ duration: 500, delay: 100 }}
+				out:scale={{ duration: 600, opacity: 0, start: 3, delay: 300 }}
+				animate:flip={{ duration: 1500, delay: 300 }}
 			>
 				<img src={image} alt={title} />
 				<div class="text">
@@ -92,8 +85,8 @@
 		<button onclick={() => changePic('prev')} aria-label="Previous slide">
 			<iconify-icon icon="material-symbols:skip-previous-outline-rounded" width="24" height="24"></iconify-icon>
 		</button>
-		<button onclick={() => (play = !play)}
-			>{#if !play}
+		<button onclick={() => (play = !play)} aria-label="Play slideshow">
+			{#if !play}
 				<iconify-icon icon="material-symbols:play-arrow-rounded" width="24" height="24"></iconify-icon>
 			{:else}
 				<iconify-icon icon="material-symbols:pause-rounded" width="24" height="24"></iconify-icon>
@@ -166,6 +159,15 @@
 				animation: fadeIn 1s forwards;
 			}
 		}
+	}
+
+	.duration {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 10px;
+		background-color: #f1683a;
+		z-index: 100;
 	}
 
 	@keyframes showImage {
